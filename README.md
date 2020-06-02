@@ -32,3 +32,5 @@ Programmers can quickly switch between a block programming view and a JavaScript
 ***Figure 2.1.** Block algorithm*
 
 ![Makecode algorithm - block code](./MakeCode.jpg)
+
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://makecode.microbit.org/#pub:_LvjRC1R1H55U" frameborder="0" sandbox="allow-popups allow-forms allow-scripts allow-same-origin">
