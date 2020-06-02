@@ -31,4 +31,4 @@ Programmers can quickly switch between a block programming view and a JavaScript
 
 ***Figure 2.1.** Block algorithm*
 
-![Makecode algorithm - block code](./microbit-and-pulsosensor.jpg?raw=true)
+![Makecode algorithm - block code](./MakeCode.jpg?raw=true)
