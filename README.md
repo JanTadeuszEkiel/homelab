@@ -90,3 +90,7 @@ The electrical signal on the analogue micro:bit output can reach a value between
 ***Figure 5.** Two decision-making levels defined for the pulse estimation algorithm.*
 
 ![Makecode algorithm - block code](./levels2.jpg)
+
+1. When the signal level from the pulse meter rises above the value of 870, the program saves the current time of this event, assuming that an impulse was detected. Since this moment the program will not search for the next signal increase above the level of 870 unless…
+
+2. …the signal from the pulse meter drops below the level of 430. Then, the program will be waiting again until the signal level rises above 870 in order to record the time of next impulse and to calculate the time (delta) between the first detected impulse and the next one. The calculated delta will allow you to measure the pulse in the next step.
