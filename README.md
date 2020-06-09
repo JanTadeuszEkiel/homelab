@@ -43,7 +43,7 @@ https://makecode.microbit.org/_iid8zbRi7Uq2
 
 ![Makecode algorithm - block code](./JS-source.jpg)
 
-```
+```js script
 let time1 = 0
 let delta_t = 0
 let time2 = 0
