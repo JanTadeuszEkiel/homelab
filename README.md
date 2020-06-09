@@ -43,6 +43,7 @@ https://makecode.microbit.org/_iid8zbRi7Uq2
 
 ![Makecode algorithm - block code](./JS-source.jpg)
 
+```
 let time1 = 0
 let delta_t = 0
 let time2 = 0
@@ -71,5 +72,5 @@ basic.forever(function () {
         counter = 0
     }
 })
-
+```
 
