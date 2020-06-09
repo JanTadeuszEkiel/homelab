@@ -47,8 +47,9 @@ let delta_t = 0
 let time2 = 0
 let PulseDet = 0
 let pulse_out = 0
-basic.showString("PULS__")
 let counter = 0
+basic.showString("PULS__")
+
 
 basic.forever(function () {
     basic.showNumber(pulse_out)
@@ -76,3 +77,6 @@ basic.forever(function () {
 })
 ```
 
+###3. Program’s description
+
+Figure 4 shows a diagram of the analogue signal that is received from the sensor. The graph represents the course of the measured heart rate. The observed waveform is not as precise as shown on ECG monitors but it gives the possibility to observe and measure the pulse.
