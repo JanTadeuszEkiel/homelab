@@ -119,4 +119,19 @@ After calculating the time lapse between impulses, it is possible to calculate t
 
 ### Find out more about the program in the micro:bit block environment:
 
-#### 1. “On Start” block:
+***1. “On Start” block:***
+
+The algorithm in this block is executed only once. It appears as the first one right after the program starts on the micro:bit device. In this block there is a function that shows the welcome message “Pulse____” on the LED display.
+
+*The remaining four program blocks are the loops, which are performed parallelly.*
+
+***2. Loop №1 — reading of the signal value from the pulsometer.***
+
+The “Forever” loop is performed, as the name suggests, continuously. Loop no. 1 reads the value of the signal from the pulsometer. As figure no. 1 shows, the pulsometer is connected to the analog-digital interface (pin) P2 of the micro:bit circuit. The “analogue read pin P2” function enables reading the value of the analogue signal. The read value is saved in the “PulseDet” variable. The process of reading the signal value and writing it to the “PulseDet” variable is repeated and executed in an endless loop.
+
+***3. Loop №2 — pulse calculation***
+
+This loop is performed in one of three defined scenarios. These scenarios are executed according to the conditional function “if” and “if else”. The first scenario is carried out along with two conditions fulfilled at the same time:
+> 1) the value of the “counter” variable equals 0,
+> 2) and the value of the pulsometer’s signal kept in the “PulseDet” variable is higher than 870.
+If both conditions are met, it can be assumed that a rising side of the impulse has been detected. The time of this incident is recorded, and then we can use the recorded time to calculate the pulse. The time of the latest pulse is recorded in “time2” variable. In the next step “delta_t”, the elapsed time between impulses, is calculated. The time of the previous impulse stored in “time1” variable is also used here.
