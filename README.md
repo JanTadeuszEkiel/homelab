@@ -116,3 +116,7 @@ The time lapse between impulses (delta_t) was calculated by subtracting “time1
 After calculating the time lapse between impulses, it is possible to calculate the pulse, which is defined as the number of heartbeats per minute. The “Running time” function used in the block program records the system time to a variable. This time is recorded right at the moment when this function is being called. The time value is recorded in milliseconds. Therefore, the time lapse calculated in the program is also saved in thousandths of a second. For the correct calculation of the pulse rate, we divide 60 000 (one minute equals 60 seconds and 60 000 milliseconds) by the elapsed time or “delta_t”.
 
 > *In Figure 3 that presents the block algorithm you can see how to calculate the pulse based on the passage of time. The variables in the block programming environment of micro:bit can only assume integer values. Therefore, the result of the calculation includes a correction for the remainder of the division.*
+
+### Find out more about the program in the micro:bit block environment:
+
+#### 1. “On Start” block:
