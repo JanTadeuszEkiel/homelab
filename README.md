@@ -136,3 +136,29 @@ This loop is performed in one of three defined scenarios. These scenarios are ex
 > 2) and the value of the pulsometer’s signal kept in the “PulseDet” variable is higher than 870.
 
 If both conditions are met, it can be assumed that a rising side of the impulse has been detected. The time of this incident is recorded, and then we can use the recorded time to calculate the pulse. The time of the latest pulse is recorded in “time2” variable. In the next step “delta_t”, the elapsed time between impulses, is calculated. The time of the previous impulse stored in “time1” variable is also used here.
+
+>*It is worth noting that after launching the program, the first calculated pulse will be faulty.
+When the “time1” variable is called for the first time, it stores the “Zero” value.*
+
+After calculating a lapse of time between impulses, “time2” (the time of the latest impulse occurrence) becomes “time1” (the time of the previous impulse occurrence). Copying the variables of the “time2” value to the “time1” variable is executed for the purpose of calculations, which will be done during the re-run of loop 2. In the next step the “counter” variable gets the value “1”. Because of that the time lapse between impulses and the pulse rate will not be calculated until the value of the pulsometer’s signal drops below 430. When signal will achieve value below 430 (P2<430), the value of “counter” variable changes to “0”. Then, the pulse is calculated. To the “pulse_out” variable there is saved a value representing the pulse: the number of impulses per minute. It is calculated as the quotient of 60000 milliseconds and “delta_t” variable. We can calculate exactly, how many elapses between two impulses fit in one minute. Variables in a block programming environment can only take integer values. However, the division operation may not result in an integer. That’s why the program includes a patch, which enables avoiding an error of writing a floating-point number (the result of the division) into the “pulse_out” variable, which can store only integral numbers. Getting rid of the “fractions” is possible thanks to “remainder of” function. First, the remainder of the division (60000/delta_t) is subtracted from 60000 milliseconds and then the result of this operation is divided by “delta_t” variable. In this way the result stored in “pulse_out” variable will always have an integer value. After calculating the pulse, the program finishes performing the condition for the scenario in which the pulse signal increases above 870 and “counter” value is 0. Next, loop 2 re-starts the performance.
+
+The second possible scenario for loop no. 2 specified in the condition “else if” will be executed along with two conditions fulfilled simultaneously:
+
+> 1)The value of “PulseDet” variable representing the level of pulsometer’s signal is less than or equal 430.
+> 2)The value of ‘counter’ variable is 1.
+
+The ‘counter’ value is set as 1 when the pulsometer’s signal rises above the value of 870. Since the program cannot allow any interference, the time of the next impulse (when signal rises above 870) will not be recorded until the signal value drops to 430. When this condition is met, the program changes the value of “couter” variable to 0 and from that moment, Loop №2 will again record the occurrence of impulse which level gets above 870.
+
+The third scenario of Loop 2, as well as “if” and “else if” conditions will occur when none of the conditions described above is met. This means that when e.g. the signal value rises above 870 and the value of “counter” variable equals 1. In this scenario there is only one operation performed: the re-start of Loop no. 2 execution.
+
+***4. Loop №3 — pulse value displayed on micro:bit circuit LED display***
+
+Here, in the loop, the value of the “pulse_out” variable is shown on the display screen. The pulse value will be presented on the screen in turns with the “heart” icon.
+
+***5. Loop №4 — transmitting the pulse signal value to a PC or other device connected to the USB cable of the micro:bit chip.***
+
+Within the loop, “serial write value” function will send a text to the USB interface. The text includes the words: “Pulse diagram” and a number that is the value currently stored in “PulseDet” variable. As a result, in the development environment console, you can observe a graph presenting the variation of the pulsometer’s signal level in the function of time. In the console it is also possible to read the received signal values and save them as a file for further analysis — e.g. to develop even better pulse calculating algorithm. In a block programming environment, we can turn on the console view by clicking “Show console device” button (Figure 8). This button appears only if the program uses “serial write value” function and when micro:bit is connected to the computer.
+
+***Figure 8:** View of the block programming environment with a console to monitor data driven from the USB cable.*
+
+![Makecode algorithm - block code](./Makecode-editor.jpg)
