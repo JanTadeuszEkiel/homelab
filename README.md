@@ -39,7 +39,7 @@ https://makecode.microbit.org/_iid8zbRi7Uq2
 
 ![Makecode algorithm - block code](./variables.jpg)
 
-***igure 3.** Source code in JavaScript.*
+***Figure 3.** Source code in JavaScript.*
 
 ```js script
 let time1 = 0
@@ -80,3 +80,13 @@ basic.forever(function () {
 ###3. Program’s description
 
 Figure 4 shows a diagram of the analogue signal that is received from the sensor. The graph represents the course of the measured heart rate. The observed waveform is not as precise as shown on ECG monitors but it gives the possibility to observe and measure the pulse.
+
+***Figure 4.** Analogue signal transmitted from the Pulsosensor which represents the pulse rate.*
+
+![Makecode algorithm - block code](./wykres-pulsu.jpg)
+
+The electrical signal on the analogue micro:bit output can reach a value between 0 and 3 V. The variable representing the read signal can achieve an overall value between 0 and 1023. The range of these values in our project can be read on the analog-digital interface no. P2. For the course of the pulse shown in Figure 4 there is a minimum and a maximum value of the recorded signal. This signal decreased to the minimum value of 165 and reached the maximum value of 949. The trial and error method (non-scientific) has defined for this program two decision-making levels of the signal received from the pulsometer (Figure 5):
+
+***Figure 5.** Two decision-making levels defined for the pulse estimation algorithm.*
+
+![Makecode algorithm - block code](./levels2.jpg)
