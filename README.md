@@ -94,3 +94,15 @@ The electrical signal on the analogue micro:bit output can reach a value between
 1. When the signal level from the pulse meter rises above the value of 870, the program saves the current time of this event, assuming that an impulse was detected. Since this moment the program will not search for the next signal increase above the level of 870 unless…
 
 2. …the signal from the pulse meter drops below the level of 430. Then, the program will be waiting again until the signal level rises above 870 in order to record the time of next impulse and to calculate the time (delta) between the first detected impulse and the next one. The calculated delta will allow you to measure the pulse in the next step.
+
+***Figure 6.** Impulse searching and the recording of the time when the impulse appears*
+
+![Makecode algorithm - block code](./pulse-recognation.jpg)
+
+We can often observe some interference in the pulsometer’s signal. After the signal rises above the level of 870, it can go slightly below this level in short time and then rise above it again repeatedly. This type of signal disturbance would result in an error of the heart rate measurement with a value of even several hundred percents. Therefore, it is necessary to determine next decision threshold of 430. That’s the value below which the signal must fall before waiting for the next rate impulse begins. (Figure 6).
+
+The algorithm of the precise heart rate calculation can be certainly more accurate. The way presented in the project was chosen as a compromise between the quality of the pulse measurement and the complexity of the algorithm, including the number of parameters and conditions in the program.
+
+The above algorithm allows to detect impulses and calculate the time lapse between two consecutive impulses (Figure 7).
+
+> ### delta_t = time2 — time1
