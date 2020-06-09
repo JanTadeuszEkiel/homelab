@@ -106,3 +106,9 @@ The algorithm of the precise heart rate calculation can be certainly more accura
 The above algorithm allows to detect impulses and calculate the time lapse between two consecutive impulses (Figure 7).
 
 > ### delta_t = time2 — time1
+
+The time lapse between impulses (delta_t) was calculated by subtracting “time1” from “time2”. The time saved in “time2” variable is the moment of the most recent impulse detection, and the time saved in “time1” variable is the moment of the previous impulse detection.
+
+***Figure 7:** Calculation of the time lapse between impulses.*
+
+![Makecode algorithm - block code](./delta_t.jpg)
