@@ -41,8 +41,6 @@ https://makecode.microbit.org/_iid8zbRi7Uq2
 
 ***igure 3.** Source code in JavaScript.*
 
-![Makecode algorithm - block code](./JS-source.jpg)
-
 ```js script
 let time1 = 0
 let delta_t = 0
@@ -51,16 +49,20 @@ let PulseDet = 0
 let pulse_out = 0
 basic.showString("PULS__")
 let counter = 0
+
 basic.forever(function () {
     basic.showNumber(pulse_out)
     basic.showIcon(IconNames.Heart)
 })
+
 basic.forever(function () {
     PulseDet = pins.analogReadPin(AnalogPin.P2)
 })
+
 basic.forever(function () {
     serial.writeValue("Pulse diagram", PulseDet)
 })
+
 basic.forever(function () {
     if (PulseDet > 870 && counter == 0) {
         time2 = input.runningTime()
