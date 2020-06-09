@@ -144,8 +144,8 @@ After calculating a lapse of time between impulses, “time2” (the time of the
 
 The second possible scenario for loop no. 2 specified in the condition “else if” will be executed along with two conditions fulfilled simultaneously:
 
-> 1)The value of “PulseDet” variable representing the level of pulsometer’s signal is less than or equal 430.
-> 2)The value of ‘counter’ variable is 1.
+>1) The value of “PulseDet” variable representing the level of pulsometer’s signal is less than or equal 430.
+>2) The value of ‘counter’ variable is 1.
 
 The ‘counter’ value is set as 1 when the pulsometer’s signal rises above the value of 870. Since the program cannot allow any interference, the time of the next impulse (when signal rises above 870) will not be recorded until the signal value drops to 430. When this condition is met, the program changes the value of “couter” variable to 0 and from that moment, Loop №2 will again record the occurrence of impulse which level gets above 870.
 
