@@ -134,4 +134,5 @@ The “Forever” loop is performed, as the name suggests, continuously. Loop no
 This loop is performed in one of three defined scenarios. These scenarios are executed according to the conditional function “if” and “if else”. The first scenario is carried out along with two conditions fulfilled at the same time:
 > 1) the value of the “counter” variable equals 0,
 > 2) and the value of the pulsometer’s signal kept in the “PulseDet” variable is higher than 870.
+
 If both conditions are met, it can be assumed that a rising side of the impulse has been detected. The time of this incident is recorded, and then we can use the recorded time to calculate the pulse. The time of the latest pulse is recorded in “time2” variable. In the next step “delta_t”, the elapsed time between impulses, is calculated. The time of the previous impulse stored in “time1” variable is also used here.
