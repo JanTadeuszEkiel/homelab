@@ -81,7 +81,7 @@ basic.forever(function () {
 
 Figure 4 shows a diagram of the analogue signal that is received from the sensor. The graph represents the course of the measured heart rate. The observed waveform is not as precise as shown on ECG monitors but it gives the possibility to observe and measure the pulse.
 
-***Figure 4.** Analogue signal transmitted from the Pulsosensor which represents the pulse rate.*
+***Figure 4.** Analogue signal transmitted from the Pulsesensor which represents the pulse rate.*
 
 ![Makecode algorithm - block code](./wykres-pulsu.jpg)
 
