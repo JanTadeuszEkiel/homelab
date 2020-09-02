@@ -1,5 +1,4 @@
-# Micro:bit & vital signs
-### ( Project powered by Liki: www.likims.com )
+# Micro:bit & vital signs *( Project powered by Liki: www.likims.com )*
 
 ### 1. About the project: "Heart rate monitoring and pulse measurement"
 This project shows in practice how to use micro:bit to implement a pulse measurement device. In order to build the pulse monitor and the measurement device, I used the micro:bit board and an optical heart rate detector. (pulsesensor.com)
